@@ -8,15 +8,24 @@ private func main(arguments: [String]) {
         print("引数を指定してください。")
         return
     }
-    
-    let fileName = "AppDelegate.swift"
-    let sourceCode = try? String(contentsOfFile: sourcePath + "/" + fileName)
-    let replacedCode = sourceCode?.replacingOccurrences(
-        of: "let string = \"\"",
-        with: "let string = \"Banana\\nApple\\nOrange\""
-    )
-    print(replacedCode!)
-    _ = try! replacedCode?.write(toFile: sourcePath + "/" + fileName, atomically: false, encoding: .utf8)
+        
+    let paths = swiftFilePaths(path: sourcePath)
+    for path in paths {
+        
+        let sourceCode = try? String(contentsOfFile: sourcePath + "/" + path)
+        let replacedCode = sourceCode?.replacingOccurrences(
+            of: "let string = \"\"",
+            with: "let string = \"Banana\\nApple\\nOrange\""
+        )
+
+        //print(replacedCode!)
+        
+        do {
+            try replacedCode?.write(toFile: sourcePath + "/" + path, atomically: false, encoding: .utf8)
+        } catch let error {
+            print("🍇 Error: \(error)")
+        }
+    }
     
     print("\(sourcePath)")
 }
@@ -24,6 +33,17 @@ private func main(arguments: [String]) {
 func conver(from string: String) -> String {
     
     return ""
+}
+
+/// .swift ファイル一覧を列挙
+func swiftFilePaths(path: String) -> [String] {
+    let manager = FileManager.default
+    do {
+        let paths = try manager.subpathsOfDirectory(atPath: path)
+        return paths.filter { $0.hasSuffix(".swift") }
+    } catch let error {
+        return []
+    }
 }
 
 main(arguments: CommandLine.arguments)

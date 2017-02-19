@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Apple,
      Orange
     */
-    let string = "Banana\nApple\nOrange"
+    let string = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -268,7 +268,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo '### Swift heredoc'\necho \"${SRCROOT}/SwiftHeredocExample\"\necho \"PRJ: ${PROJECT_DIR}\"\n/Users/yusuke/Desktop/swift-heredoc/main \"${SRCROOT}/SwiftHeredocExample\"";
+			shellScript = "echo '### Swift heredoc'\n${PROJECT_DIR}/main \"${SRCROOT}/SwiftHeredocExample\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

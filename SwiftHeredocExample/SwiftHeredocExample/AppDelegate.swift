@@ -12,7 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    /*
+     <<<[EOL]
+     Banana,
+     Apple,
+     Orange
+    */
+    let string = "Banana\nApple\nOrange"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

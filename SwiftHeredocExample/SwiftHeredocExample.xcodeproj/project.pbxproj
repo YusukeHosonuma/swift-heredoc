@@ -34,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140FF9D11E5976D3002A600A /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = SOURCE_ROOT; };
 		701CC9551E597207005BC212 /* SwiftHeredocExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHeredocExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701CC9581E597207005BC212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		701CC95A1E597207005BC212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		701CC9571E597207005BC212 /* SwiftHeredocExample */ = {
 			isa = PBXGroup;
 			children = (
+				140FF9D11E5976D3002A600A /* main.swift */,
 				701CC9581E597207005BC212 /* AppDelegate.swift */,
 				701CC95A1E597207005BC212 /* ViewController.swift */,
 				701CC95C1E597207005BC212 /* Main.storyboard */,
@@ -188,7 +190,7 @@
 		701CC94D1E597207005BC212 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Penginmura;
 				TargetAttributes = {
@@ -431,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftHeredocExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SwiftHeredocExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwiftHeredocExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SwiftHeredocExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +527,7 @@
 				701CC97F1E597207005BC212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		701CC9801E597207005BC212 /* Build configuration list for PBXNativeTarget "SwiftHeredocExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +536,7 @@
 				701CC9821E597207005BC212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		701CC9831E597207005BC212 /* Build configuration list for PBXNativeTarget "SwiftHeredocExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +545,7 @@
 				701CC9851E597207005BC212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

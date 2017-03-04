@@ -11,7 +11,7 @@ import Foundation
 private let RegexBeginComment = Regex("/\\*")!
 private let RegexEndComment   = Regex("\\*/")!
 private let RegexLetString    = Regex("let ([0-9A-Za-z]+)\\s*=\\s*\"")!
-private let RegexHeredoc      = Regex("(\\s*)<<\\[EOL\\]")!
+private let RegexHeredoc      = Regex("(\\s*)<< DOC;")!
 
 fileprivate extension String {
     var isBeginComment: Bool {

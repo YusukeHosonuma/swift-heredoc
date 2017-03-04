@@ -5,7 +5,7 @@ class Foo {
     // -- 入れ子のパターン（インデントの検証）
 
     /*
-     <<[EOL]
+     << DOC;
      Banana
      Apple
      Orange
@@ -15,7 +15,7 @@ class Foo {
     func foo() {
 
         /*
-         <<[EOL]
+         << DOC;
          Banana
          Apple
          Orange

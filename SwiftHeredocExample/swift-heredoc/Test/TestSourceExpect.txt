@@ -5,7 +5,7 @@ class Foo {
     // -- 標準パターン
 
     /*
-     <<[EOL]
+     << DOC;
      Banana
      Apple
      Orange
@@ -15,7 +15,7 @@ class Foo {
     // -- 文字列のエスケープ
 
     /*
-     <<[EOL]
+     << DOC;
      "" is a String literal.
      \r\n is line feed character.
      */
@@ -24,7 +24,7 @@ class Foo {
     // -- JSON文字列
 
     /*
-     <<[EOL]
+     << DOC;
      {
          "resultCount": 1,
          "users": [{

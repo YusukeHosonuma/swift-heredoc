@@ -1,0 +1,25 @@
+import Foundation
+
+class Foo {
+
+    // -- 入れ子のパターン（インデントの検証）
+
+    /*
+     <<[EOL]
+     Banana
+     Apple
+     Orange
+     */
+    let string1 = ""
+
+    func foo() {
+
+        /*
+         <<[EOL]
+         Banana
+         Apple
+         Orange
+         */
+        let string2 = ""
+    }
+}

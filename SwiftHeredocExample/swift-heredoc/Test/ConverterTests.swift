@@ -19,6 +19,8 @@ class ConverterTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Pattern 1
+    
     /// 初期状態（""）からの変換
     func test_convertFromInitial() {
         
@@ -37,6 +39,35 @@ class ConverterTests: XCTestCase {
     func test_convertFromConverted() {
         
         guard let expect = self.loadFile(filename: "TestSourceExpect") else {
+            XCTFail()
+            return
+        }
+        
+        let reConverted = convert(from: expect)
+        XCTAssertEqual(reConverted, expect)
+    }
+    
+    
+    // MARK: - Pattern 2
+    
+    /// 初期状態（""）からの変換
+    func test2_convertFromInitial() {
+        
+        guard
+            let source = self.loadFile(filename: "TestSource2"),
+            let expect = self.loadFile(filename: "TestSourceExpect2") else {
+                XCTFail()
+                return
+        }
+        
+        let converted = convert(from: source)
+        XCTAssertEqual(converted, expect)
+    }
+    
+    /// 変換後の結果からまた変換しても変化しないこと
+    func test2_convertFromConverted() {
+        
+        guard let expect = self.loadFile(filename: "TestSourceExpect2") else {
             XCTFail()
             return
         }

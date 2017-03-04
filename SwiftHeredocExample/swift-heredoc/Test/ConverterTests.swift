@@ -19,7 +19,8 @@ class ConverterTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_convert() {
+    /// 初期状態（""）からの変換
+    func test_convertFromInitial() {
         
         guard
             let source = self.loadFile(filename: "TestSource"),
@@ -29,17 +30,24 @@ class ConverterTests: XCTestCase {
         }
         
         let converted = convert(from: source)
-        
-        print("---INPUT---")
-        print(source)
-        
-        print("---OUTPUT---")
-        print(converted)
-        
         XCTAssertEqual(converted, expect)
     }
+    
+    /// 変換後の結果からまた変換しても変化しないこと
+    func test_convertFromConverted() {
+        
+        guard let expect = self.loadFile(filename: "TestSourceExpect") else {
+            XCTFail()
+            return
+        }
+        
+        let reConverted = convert(from: expect)
+        XCTAssertEqual(reConverted, expect)
+    }
 
-    func loadFile(filename: String) -> String? {
+    // MARK: - private
+    
+    private func loadFile(filename: String) -> String? {
         let bundle = Bundle(for: type(of: self))
         guard let path = bundle.path(forResource: filename, ofType: "txt") else { return nil }
         return try? String(contentsOfFile: path)

@@ -115,19 +115,16 @@ func convert(from text: String) -> String {
 /// - Returns: 変換後のコード
 func convertHeredocToSource(_ lines: [String], variable: String, indent: Int?) -> String {
     
-    let code = lines.joined(separator: "\\n")
-    let escaped = escapeCharacters(code)
-    
-    let newLine = "let \(variable) = \"\(escaped)\""
+    let code = lines
+        .map{ $0.escapeStringLiteralCharacters() }
+        .joined(separator: "\\n")
+
+    let newLine = "let \(variable) = \"\(code)\""
     
     if let indent = indent {
         return newLine.leftPad(indent)
     } else {
         return newLine
     }
-}
-
-func escapeCharacters(_ line: String) -> String {
-    return line.replacingOccurrences(of: "\"", with: "\\\"")
 }
 

@@ -16,9 +16,8 @@ class Foo {
 
     /*
      <<[EOL]
-     "Banana"
-     "Apple"
-     "Orange"
+     "" is a String literal.
+     \r\n is line feed character.
      */
     let string2 = ""
 

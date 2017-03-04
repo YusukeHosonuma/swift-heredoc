@@ -16,11 +16,10 @@ class Foo {
 
     /*
      <<[EOL]
-     "Banana"
-     "Apple"
-     "Orange"
+     "" is a String literal.
+     \r\n is line feed character.
      */
-    let string2 = "\"Banana\"\n\"Apple\"\n\"Orange\""
+    let string2 = "\"\" is a String literal.\n\\r\\n is line feed character."
 
     // -- JSON文字列
 

@@ -28,6 +28,17 @@ private func main(arguments: [String]) {
     print("\(sourcePath)")
 }
 
+func convertHeredocToSource(_ lines: [String]) -> String {
+
+    let code = lines.joined(separator: "\\n")
+    let escaped = escapeCharacters(code)
+    return escaped
+}
+
+func escapeCharacters(_ line: String) -> String {
+    return line.replacingOccurrences(of: "\"", with: "\\\"")
+}
+
 /// 指定されたコード全体を変換したものを返す
 ///
 /// - Parameter string: ソースコード全体
@@ -54,17 +65,17 @@ func convert(from text: String) -> String {
             let regex = Regex("let ([0-9A-Za-z]+)\\s*=\\s*\"")!
             if regex.isMatch(line) {
                 let variable = regex.match(line)!._1
-                let convertedHeredoc = heredocLines.joined(separator: "\\n")
-                // TODO: あとでちゃんとインデントする
-                let newLine = "    let \(variable) = \"\(convertedHeredoc)\""
-                results.append(newLine)
+
+                let strintLiteral = convertHeredocToSource(heredocLines)
+
+                let newLine = "let \(variable) = \"\(strintLiteral)\""
+                results.append(newLine.leftPad(indent ?? 0))
                 
                 heredocLines = []
                 indent = nil
                 continue
             }
             
-//            results.append("//" + heredocLines.joined(separator: "🍎"))
             heredocLines = []
             indent = nil
         }
@@ -123,6 +134,11 @@ func swiftFilePaths(path: String) -> [String] {
 extension String {
     func lines() -> [String] {
         return self.components(separatedBy: "\n")
+    }
+    
+    func leftPad(_ n: Int) -> String {
+        let indent = String(repeating: " ", count: n)
+        return indent + self
     }
     
     static func unlines(_ lines: [String]) -> String {

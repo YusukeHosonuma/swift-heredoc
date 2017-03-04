@@ -1,12 +1,24 @@
 import Foundation
 
 class Foo {
-    
+
+    // -- 標準パターン
+
     /*
      <<[EOL]
      Banana
      Apple
      Orange
      */
-    let string = "Banana\nApple\nOrange"
+    let string1 = "Banana\nApple\nOrange"
+
+    // -- 文字列のエスケープ
+
+    /*
+     <<[EOL]
+     "Banana"
+     "Apple"
+     "Orange"
+     */
+    let string2 = "\"Banana\"\n\"Apple\"\n\"Orange\""
 }

@@ -11,6 +11,12 @@
 		7086BE931E6A686E00842A4E /* TestSourceExpect.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BE921E6A686E00842A4E /* TestSourceExpect.txt */; };
 		7086BE951E6A68D800842A4E /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BE941E6A68D800842A4E /* ConverterTests.swift */; };
 		7086BE971E6A68EB00842A4E /* TestSource.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BE961E6A68EB00842A4E /* TestSource.txt */; };
+		7086BE9B1E6A83E200842A4E /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BE9A1E6A83E200842A4E /* Functions.swift */; };
+		7086BE9C1E6A83E200842A4E /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BE9A1E6A83E200842A4E /* Functions.swift */; };
+		7086BE9E1E6A840800842A4E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BE9D1E6A840800842A4E /* Extensions.swift */; };
+		7086BE9F1E6A840800842A4E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BE9D1E6A840800842A4E /* Extensions.swift */; };
+		7086BEA11E6A842300842A4E /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BEA01E6A842300842A4E /* Converter.swift */; };
+		7086BEA21E6A842300842A4E /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BEA01E6A842300842A4E /* Converter.swift */; };
 		70AB059C1E6A5C07004F0B50 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB059B1E6A5C07004F0B50 /* Regex.swift */; };
 		70AB05B21E6A66BE004F0B50 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
@@ -20,6 +26,9 @@
 		7086BE921E6A686E00842A4E /* TestSourceExpect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSourceExpect.txt; sourceTree = "<group>"; };
 		7086BE941E6A68D800842A4E /* ConverterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterTests.swift; sourceTree = "<group>"; };
 		7086BE961E6A68EB00842A4E /* TestSource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSource.txt; sourceTree = "<group>"; };
+		7086BE9A1E6A83E200842A4E /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = SOURCE_ROOT; };
+		7086BE9D1E6A840800842A4E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = SOURCE_ROOT; };
+		7086BEA01E6A842300842A4E /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = SOURCE_ROOT; };
 		70AB059B1E6A5C07004F0B50 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = SOURCE_ROOT; };
 		70AB05A71E6A64AB004F0B50 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70AB05AB1E6A64AB004F0B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* main.swift */,
+				7086BEA01E6A842300842A4E /* Converter.swift */,
+				7086BE9A1E6A83E200842A4E /* Functions.swift */,
+				7086BE9D1E6A840800842A4E /* Extensions.swift */,
 				70AB059B1E6A5C07004F0B50 /* Regex.swift */,
 			);
 			name = "swift-heredoc";
@@ -205,9 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7086BE9F1E6A840800842A4E /* Extensions.swift in Sources */,
 				7086BE951E6A68D800842A4E /* ConverterTests.swift in Sources */,
 				7086BE911E6A677A00842A4E /* Regex.swift in Sources */,
 				70AB05B21E6A66BE004F0B50 /* main.swift in Sources */,
+				7086BEA21E6A842300842A4E /* Converter.swift in Sources */,
+				7086BE9C1E6A83E200842A4E /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +232,9 @@
 			files = (
 				OBJ_18 /* main.swift in Sources */,
 				70AB059C1E6A5C07004F0B50 /* Regex.swift in Sources */,
+				7086BE9B1E6A83E200842A4E /* Functions.swift in Sources */,
+				7086BE9E1E6A840800842A4E /* Extensions.swift in Sources */,
+				7086BEA11E6A842300842A4E /* Converter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

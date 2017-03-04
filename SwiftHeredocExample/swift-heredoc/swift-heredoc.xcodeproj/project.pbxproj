@@ -19,6 +19,8 @@
 		7086BEA21E6A842300842A4E /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BEA01E6A842300842A4E /* Converter.swift */; };
 		7086BEA51E6A960C00842A4E /* TestSource2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BEA31E6A960C00842A4E /* TestSource2.txt */; };
 		7086BEA61E6A960C00842A4E /* TestSourceExpect2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BEA41E6A960C00842A4E /* TestSourceExpect2.txt */; };
+		7086BEA91E6AA66F00842A4E /* TestSource_Regex_Expect.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BEA71E6AA66F00842A4E /* TestSource_Regex_Expect.txt */; };
+		7086BEAA1E6AA66F00842A4E /* TestSource_Regex.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BEA81E6AA66F00842A4E /* TestSource_Regex.txt */; };
 		70AB059C1E6A5C07004F0B50 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB059B1E6A5C07004F0B50 /* Regex.swift */; };
 		70AB05B21E6A66BE004F0B50 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
@@ -33,6 +35,8 @@
 		7086BEA01E6A842300842A4E /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = SOURCE_ROOT; };
 		7086BEA31E6A960C00842A4E /* TestSource2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSource2.txt; sourceTree = "<group>"; };
 		7086BEA41E6A960C00842A4E /* TestSourceExpect2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSourceExpect2.txt; sourceTree = "<group>"; };
+		7086BEA71E6AA66F00842A4E /* TestSource_Regex_Expect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSource_Regex_Expect.txt; sourceTree = "<group>"; };
+		7086BEA81E6AA66F00842A4E /* TestSource_Regex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSource_Regex.txt; sourceTree = "<group>"; };
 		70AB059B1E6A5C07004F0B50 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = SOURCE_ROOT; };
 		70AB05A71E6A64AB004F0B50 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70AB05AB1E6A64AB004F0B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,14 +63,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70AB05A81E6A64AB004F0B50 /* Tests */ = {
+		7086BEAB1E6AA67400842A4E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7086BE941E6A68D800842A4E /* ConverterTests.swift */,
+				7086BEA71E6AA66F00842A4E /* TestSource_Regex_Expect.txt */,
+				7086BEA81E6AA66F00842A4E /* TestSource_Regex.txt */,
 				7086BE961E6A68EB00842A4E /* TestSource.txt */,
 				7086BE921E6A686E00842A4E /* TestSourceExpect.txt */,
 				7086BEA31E6A960C00842A4E /* TestSource2.txt */,
 				7086BEA41E6A960C00842A4E /* TestSourceExpect2.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		70AB05A81E6A64AB004F0B50 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7086BEAB1E6AA67400842A4E /* Resources */,
+				7086BE941E6A68D800842A4E /* ConverterTests.swift */,
 				70AB05AB1E6A64AB004F0B50 /* Info.plist */,
 			);
 			name = Tests;
@@ -189,8 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7086BE931E6A686E00842A4E /* TestSourceExpect.txt in Resources */,
+				7086BEAA1E6AA66F00842A4E /* TestSource_Regex.txt in Resources */,
 				7086BEA51E6A960C00842A4E /* TestSource2.txt in Resources */,
 				7086BE971E6A68EB00842A4E /* TestSource.txt in Resources */,
+				7086BEA91E6AA66F00842A4E /* TestSource_Regex_Expect.txt in Resources */,
 				7086BEA61E6A960C00842A4E /* TestSourceExpect2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

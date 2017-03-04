@@ -75,6 +75,35 @@ class ConverterTests: XCTestCase {
         let reConverted = convert(from: expect)
         XCTAssertEqual(reConverted, expect)
     }
+    
+    
+    // MARK: - Pattern 3
+    
+    /// 初期状態（""）からの変換
+    func test3_convertFromInitial() {
+        
+        guard
+            let source = self.loadFile(filename: "TestSource_Regex"),
+            let expect = self.loadFile(filename: "TestSource_Regex_Expect") else {
+                XCTFail()
+                return
+        }
+        
+        let converted = convert(from: source)
+        XCTAssertEqual(converted, expect)
+    }
+    
+    /// 変換後の結果からまた変換しても変化しないこと
+    func test3_convertFromConverted() {
+        
+        guard let expect = self.loadFile(filename: "TestSource_Regex_Expect") else {
+            XCTFail()
+            return
+        }
+        
+        let reConverted = convert(from: expect)
+        XCTAssertEqual(reConverted, expect)
+    }
 
     // MARK: - private
     

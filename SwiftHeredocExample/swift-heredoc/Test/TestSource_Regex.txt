@@ -1,0 +1,12 @@
+import Foundation
+
+class Foo {
+
+    // -- 正規表現の埋め込み
+
+    /*
+     << DOC;
+     https?://[\w/:%#\$&\?\(\)~\.=\+\-]+
+     */
+    let patten = ""
+}

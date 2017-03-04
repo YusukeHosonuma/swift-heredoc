@@ -8,17 +8,29 @@
 
 import Foundation
 
+typealias Indent = Int
+
 private let RegexBeginComment = Regex("/\\*")!
 private let RegexEndComment   = Regex("\\*/")!
 private let RegexLetString    = Regex("let ([0-9A-Za-z]+)\\s*=\\s*\"")!
 private let RegexHeredoc      = Regex("(\\s*)<< DOC;")!
 
 fileprivate extension String {
+    
     var isBeginComment: Bool {
         return RegexBeginComment.isMatch(self)
     }
+    
     var isEndComment: Bool {
         return RegexEndComment.isMatch(self)
+    }
+    
+    func matchHeredoc() -> Indent? {
+
+        guard RegexHeredoc.isMatch(self) else { return nil }
+        
+        let space = RegexHeredoc.match(self)?._1
+        return space?.characters.count
     }
 }
 
@@ -46,9 +58,8 @@ func convert(from text: String) -> String {
         if inComment {
             
             // インデントを記憶
-            if RegexHeredoc.isMatch(line) {
-                let space = RegexHeredoc.match(line)!._1
-                indent = space.characters.count
+            if let spaceIndent = line.matchHeredoc() {
+                indent = spaceIndent
                 results.append(line)
                 continue
             }

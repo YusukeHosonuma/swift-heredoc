@@ -63,6 +63,7 @@ func convert(from text: String) -> String {
         // here-docを解析して記録
         if inComment {
             
+            // インデントを記憶
             if Regex("(\\s*)<<\\[EOL\\]")!.isMatch(line) {
                 let space = Regex("(\\s*)<<\\[EOL\\]")!.match(line)!._1
                 indent = space.characters.count
@@ -78,8 +79,7 @@ func convert(from text: String) -> String {
             }
             
             // スペーストリム
-            // TODO: あとでちゃんと計算する
-            let trimmed = line.substring(from: line.index(line.startIndex, offsetBy: 5))
+            let trimmed = line.substring(from: line.index(line.startIndex, offsetBy: indent ?? 0))
             heredocLines.append(trimmed)
             
             results.append(line)
@@ -103,3 +103,4 @@ func convertHeredocToSource(_ lines: [String]) -> String {
 func escapeCharacters(_ line: String) -> String {
     return line.replacingOccurrences(of: "\"", with: "\\\"")
 }
+

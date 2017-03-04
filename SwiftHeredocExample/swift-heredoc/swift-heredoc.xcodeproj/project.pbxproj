@@ -55,7 +55,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70AB05A81E6A64AB004F0B50 /* Test */ = {
+		70AB05A81E6A64AB004F0B50 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				7086BE941E6A68D800842A4E /* ConverterTests.swift */,
@@ -63,14 +63,8 @@
 				7086BE921E6A686E00842A4E /* TestSourceExpect.txt */,
 				70AB05AB1E6A64AB004F0B50 /* Info.plist */,
 			);
+			name = Tests;
 			path = Test;
-			sourceTree = "<group>";
-		};
-		OBJ_10 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		OBJ_11 /* Products */ = {
@@ -87,8 +81,7 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_10 /* Tests */,
-				70AB05A81E6A64AB004F0B50 /* Test */,
+				70AB05A81E6A64AB004F0B50 /* Tests */,
 				OBJ_11 /* Products */,
 			);
 			sourceTree = "<group>";

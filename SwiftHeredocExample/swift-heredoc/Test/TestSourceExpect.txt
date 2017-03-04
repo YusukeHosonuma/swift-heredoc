@@ -21,4 +21,18 @@ class Foo {
      "Orange"
      */
     let string2 = "\"Banana\"\n\"Apple\"\n\"Orange\""
+
+    // -- JSON文字列
+
+    /*
+     <<[EOL]
+     {
+         "resultCount": 1,
+         "users": [{
+             "id": "fooid",
+             "name": "barname"
+         }]
+     }
+     */
+    let string3 = "{\n    \"resultCount\": 1,\n    \"users\": [{\n        \"id\": \"fooid\",\n        \"name\": \"barname\"\n    }]\n}"
 }

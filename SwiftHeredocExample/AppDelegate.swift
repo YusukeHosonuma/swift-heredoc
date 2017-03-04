@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      << DOC;
      https?://[\w/:%#\$&\?\(\)~\.=\+\-]+
      */
-    let patten = ""
+    let patten = "https?://[\\w/:%#\\$&\\?\\(\\)~\\.=\\+\\-]+"
     
     /*
      Banana,

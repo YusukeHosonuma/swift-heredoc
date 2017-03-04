@@ -10,34 +10,41 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+
     /*
      << DOC;
-     This
-     is
-     a
-     message
-     from
-     America
+     {
+        "id": 1,
+        "name": "Taro"
+     }
      */
-    let string = ""
+    let json1 = ""
     
     /*
      << DOC;
      {
-        "resultCount": 1,
-        "users": [{
-            "id": "fooid",
-            "name": "barname"
-        }]
+     "resultCount": 1,
+     "users": [{
+     "id": "fooid",
+     "name": "barname"
+     }]
      }
      */
-    let json = ""
+    let json2 = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+
+        // Apply textview
+        self.textView.text = json2
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

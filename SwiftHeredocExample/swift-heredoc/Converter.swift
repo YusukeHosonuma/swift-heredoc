@@ -8,6 +8,20 @@
 
 import Foundation
 
+private let RegexBeginComment = Regex("/\\*")!
+private let RegexEndComment   = Regex("\\*/")!
+private let RegexLetString    = Regex("let ([0-9A-Za-z]+)\\s*=\\s*\"")!
+private let RegexHeredoc      = Regex("(\\s*)<<\\[EOL\\]")!
+
+fileprivate extension String {
+    var isBeginComment: Bool {
+        return RegexBeginComment.isMatch(self)
+    }
+    var isEndComment: Bool {
+        return RegexEndComment.isMatch(self)
+    }
+}
+
 /// 指定されたコード全体を変換したものを返す
 ///
 /// - Parameter string: ソースコード全体
@@ -28,51 +42,19 @@ func convert(from text: String) -> String {
     
     for line in text.lines() {
         
-        // コメントの外に到達してヒアドキュメントが含まれていたら
-        if !inComment && !heredocLines.isEmpty {
-            
-            let regex = Regex("let ([0-9A-Za-z]+)\\s*=\\s*\"")!
-            if regex.isMatch(line) {
-                let variable = regex.match(line)!._1
-                
-                let strintLiteral = convertHeredocToSource(heredocLines)
-                
-                let newLine = "let \(variable) = \"\(strintLiteral)\""
-                if let indent = indent {
-                    results.append(newLine.leftPad(indent - 1))
-                } else {
-                    results.append(newLine)
-                }
-                
-                heredocLines = []
-                indent = nil
-                continue
-            }
-            
-            heredocLines = []
-            indent = nil
-        }
-        
-        // コメント開始
-        if Regex("/\\*")!.isMatch(line) {
-            inComment = true
-            results.append(line)
-            continue
-        }
-        
         // here-docを解析して記録
         if inComment {
             
             // インデントを記憶
-            if Regex("(\\s*)<<\\[EOL\\]")!.isMatch(line) {
-                let space = Regex("(\\s*)<<\\[EOL\\]")!.match(line)!._1
+            if RegexHeredoc.isMatch(line) {
+                let space = RegexHeredoc.match(line)!._1
                 indent = space.characters.count
                 results.append(line)
                 continue
             }
             
             // コメント終了
-            if Regex("\\*/")!.isMatch(line) {
+            if line.isEndComment {
                 inComment = false
                 results.append(line)
                 continue
@@ -84,6 +66,37 @@ func convert(from text: String) -> String {
             
             results.append(line)
             continue
+            
+        } else {
+            
+            // コメント開始
+            if line.isBeginComment {
+                inComment = true
+                results.append(line)
+                continue
+            }
+            
+            // コメントの外に到達してヒアドキュメントが含まれていたら
+            if !heredocLines.isEmpty {
+                
+                if RegexLetString.isMatch(line) {
+                    
+                    let variable = RegexLetString.match(line)!._1
+                    
+                    // 文字列リテラルに変換
+                    let newLine = convertHeredocToSource(heredocLines,
+                                                         variable: variable,
+                                                         indent: indent.flatMap{ $0 - 1 })
+                    results.append(newLine)
+                    
+                    heredocLines = []
+                    indent = nil
+                    continue
+                }
+                
+                heredocLines = []
+                indent = nil
+            }
         }
         
         // その他の行
@@ -93,11 +106,25 @@ func convert(from text: String) -> String {
     return String.unlines(results)
 }
 
-func convertHeredocToSource(_ lines: [String]) -> String {
+/// here-docコードから文字列リテラル宣言コードに変換
+///
+/// - Parameters:
+///   - lines: here-docコード
+///   - variable: 変数名
+///   - indent: インデント
+/// - Returns: 変換後のコード
+func convertHeredocToSource(_ lines: [String], variable: String, indent: Int?) -> String {
     
     let code = lines.joined(separator: "\\n")
     let escaped = escapeCharacters(code)
-    return escaped
+    
+    let newLine = "let \(variable) = \"\(escaped)\""
+    
+    if let indent = indent {
+        return newLine.leftPad(indent)
+    } else {
+        return newLine
+    }
 }
 
 func escapeCharacters(_ line: String) -> String {

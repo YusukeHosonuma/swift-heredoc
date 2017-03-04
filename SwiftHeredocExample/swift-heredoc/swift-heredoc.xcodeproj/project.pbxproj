@@ -7,16 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7086BE911E6A677A00842A4E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB059B1E6A5C07004F0B50 /* Regex.swift */; };
+		7086BE931E6A686E00842A4E /* TestSourceExpect.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BE921E6A686E00842A4E /* TestSourceExpect.txt */; };
+		7086BE951E6A68D800842A4E /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086BE941E6A68D800842A4E /* ConverterTests.swift */; };
+		7086BE971E6A68EB00842A4E /* TestSource.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7086BE961E6A68EB00842A4E /* TestSource.txt */; };
+		70AB059C1E6A5C07004F0B50 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB059B1E6A5C07004F0B50 /* Regex.swift */; };
+		70AB05B21E6A66BE004F0B50 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7086BE921E6A686E00842A4E /* TestSourceExpect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSourceExpect.txt; sourceTree = "<group>"; };
+		7086BE941E6A68D800842A4E /* ConverterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterTests.swift; sourceTree = "<group>"; };
+		7086BE961E6A68EB00842A4E /* TestSource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSource.txt; sourceTree = "<group>"; };
+		70AB059B1E6A5C07004F0B50 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = SOURCE_ROOT; };
+		70AB05A71E6A64AB004F0B50 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70AB05AB1E6A64AB004F0B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_12 /* swift-heredoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swift-heredoc"; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		70AB05A41E6A64AB004F0B50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
@@ -27,6 +46,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70AB05A81E6A64AB004F0B50 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				7086BE941E6A68D800842A4E /* ConverterTests.swift */,
+				7086BE961E6A68EB00842A4E /* TestSource.txt */,
+				7086BE921E6A686E00842A4E /* TestSourceExpect.txt */,
+				70AB05AB1E6A64AB004F0B50 /* Info.plist */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -38,19 +68,20 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_12 /* swift-heredoc */,
+				70AB05A71E6A64AB004F0B50 /* Test.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
+				70AB05A81E6A64AB004F0B50 /* Test */,
 				OBJ_11 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -65,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* main.swift */,
+				70AB059B1E6A5C07004F0B50 /* Regex.swift */,
 			);
 			name = "swift-heredoc";
 			path = .;
@@ -73,6 +105,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		70AB05A61E6A64AB004F0B50 /* Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70AB05AC1E6A64AB004F0B50 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildPhases = (
+				70AB05A31E6A64AB004F0B50 /* Sources */,
+				70AB05A41E6A64AB004F0B50 /* Frameworks */,
+				70AB05A51E6A64AB004F0B50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Test;
+			productName = Test;
+			productReference = 70AB05A71E6A64AB004F0B50 /* Test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		OBJ_13 /* swift-heredoc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_14 /* Build configuration list for PBXNativeTarget "swift-heredoc" */;
@@ -96,7 +145,14 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					70AB05A61E6A64AB004F0B50 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "swift-heredoc" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -105,15 +161,28 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				OBJ_13 /* swift-heredoc */,
+				70AB05A61E6A64AB004F0B50 /* Test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70AB05A51E6A64AB004F0B50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7086BE931E6A686E00842A4E /* TestSourceExpect.txt in Resources */,
+				7086BE971E6A68EB00842A4E /* TestSource.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		70B0AEAD1E6A561700F914B0 /* ShellScript */ = {
@@ -132,17 +201,124 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		70AB05A31E6A64AB004F0B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7086BE951E6A68D800842A4E /* ConverterTests.swift in Sources */,
+				7086BE911E6A677A00842A4E /* Regex.swift in Sources */,
+				70AB05B21E6A66BE004F0B50 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
 				OBJ_18 /* main.swift in Sources */,
+				70AB059C1E6A5C07004F0B50 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		70AB05AD1E6A64AB004F0B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		70AB05AE1E6A64AB004F0B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.Test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		OBJ_15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -224,6 +400,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		70AB05AC1E6A64AB004F0B50 /* Build configuration list for PBXNativeTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70AB05AD1E6A64AB004F0B50 /* Debug */,
+				70AB05AE1E6A64AB004F0B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		OBJ_14 /* Build configuration list for PBXNativeTarget "swift-heredoc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

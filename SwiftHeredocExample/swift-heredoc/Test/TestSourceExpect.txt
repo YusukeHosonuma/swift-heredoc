@@ -1,0 +1,12 @@
+import Foundation
+
+class Foo {
+    
+    /*
+     <<[EOL]
+     Banana
+     Apple
+     Orange
+     */
+    let string = "Banana\nApple\nOrange"
+}

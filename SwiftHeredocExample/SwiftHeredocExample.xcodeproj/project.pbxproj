@@ -34,7 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		140FF9D11E5976D3002A600A /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = SOURCE_ROOT; };
 		701CC9551E597207005BC212 /* SwiftHeredocExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHeredocExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701CC9581E597207005BC212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		701CC95A1E597207005BC212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 		701CC9571E597207005BC212 /* SwiftHeredocExample */ = {
 			isa = PBXGroup;
 			children = (
-				140FF9D11E5976D3002A600A /* main.swift */,
 				701CC9581E597207005BC212 /* AppDelegate.swift */,
 				701CC95A1E597207005BC212 /* ViewController.swift */,
 				701CC95C1E597207005BC212 /* Main.storyboard */,
@@ -270,7 +268,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo '### Swift heredoc'\necho \"--- ${PROJECT_DIR} ---\"\n${PROJECT_DIR}/main2 \"${SRCROOT}/SwiftHeredocExample\"";
+			shellScript = "echo '### Swift heredoc'\necho \"--- ${PROJECT_DIR} ---\"\n${PROJECT_DIR}/swift-heredoc/swift-heredoc \"${SRCROOT}/SwiftHeredocExample\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -15,7 +15,7 @@ private func main(arguments: [String]) {
         let sourceCode = try? String(contentsOfFile: sourcePath + "/" + path)
         let replacedCode = sourceCode?.replacingOccurrences(
             of: "let string = \"\"",
-            with: "let string = \"Banana\\nApple\\nOrange\""
+            with: "let string = \"Banana\\nApple\\nOrange🍊\""
         )
 
         //print(replacedCode!)

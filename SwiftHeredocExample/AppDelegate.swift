@@ -14,17 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     /*
+     << DOC;
+     https?://[\w/:%#\$&\?\(\)~\.=\+\-]+
+     */
+    let patten = ""
+    
+    /*
      Banana,
      Apple,
      Orange
     */
     let string = ""
-
-    /*
-     << DOC;
-     https?://[\w/:%#\$&\?\(\)~\.=\+\-]+
-     */
-    let patten = "https?://[\\w/:%#\\$&\\?\\(\\)~\\.=\\+\\-]+"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

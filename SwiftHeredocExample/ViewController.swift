@@ -19,7 +19,7 @@ class ViewController: UIViewController {
      from
      America
      */
-    let string = "This\nis\na\nmessage\nfrom\nAmerica"
+    let string = ""
     
     /*
      << DOC;
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         }]
      }
      */
-    let json = "{\n   \"resultCount\": 1,\n   \"users\": [{\n       \"id\": \"fooid\",\n       \"name\": \"barname\"\n   }]\n}"
+    let json = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

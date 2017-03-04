@@ -11,12 +11,27 @@ import UIKit
 class ViewController: UIViewController {
 
     /*
-     <<<[EOL]
-     Banana,
-     Apple,
-     Orange
+     << DOC;
+     This
+     is
+     a
+     message
+     from
+     America
      */
-    let string = ""
+    let string = "This\nis\na\nmessage\nfrom\nAmerica"
+    
+    /*
+     << DOC;
+     {
+        "resultCount": 1,
+        "users": [{
+            "id": "fooid",
+            "name": "barname"
+        }]
+     }
+     */
+    let json = "{\n   \"resultCount\": 1,\n   \"users\": [{\n       \"id\": \"fooid\",\n       \"name\": \"barname\"\n   }]\n}"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +42,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

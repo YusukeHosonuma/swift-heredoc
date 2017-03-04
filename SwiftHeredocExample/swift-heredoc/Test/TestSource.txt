@@ -2,6 +2,15 @@ import Foundation
 
 class Foo {
 
+    // -- 標準コメント
+
+    /*
+     Banana
+     Apple
+     Orange
+     */
+    let string0 = ""
+
     // -- 標準パターン
 
     /*

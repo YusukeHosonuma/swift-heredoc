@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     /*
-     <<<[EOL]
      Banana,
      Apple,
      Orange

@@ -57,7 +57,7 @@ func convert(from text: String) -> String {
         // here-docを解析して記録
         if inComment {
             
-            // インデントを記憶
+            // ヒアドキュメント開始
             if let spaceIndent = line.matchHeredoc() {
                 indent = spaceIndent
                 results.append(line)
@@ -90,14 +90,14 @@ func convert(from text: String) -> String {
             // コメントの外に到達してヒアドキュメントが含まれていたら
             if !heredocLines.isEmpty {
                 
-                if RegexLetString.isMatch(line) {
+                if let indentSpace = indent, RegexLetString.isMatch(line) {
                     
                     let variable = RegexLetString.match(line)!._1
                     
                     // 文字列リテラルに変換
                     let newLine = convertHeredocToSource(heredocLines,
                                                          variable: variable,
-                                                         indent: indent.flatMap{ $0 - 1 })
+                                                         indent: indentSpace - 1)
                     results.append(newLine)
                     
                     heredocLines = []
